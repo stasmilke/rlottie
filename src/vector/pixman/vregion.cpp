@@ -145,7 +145,7 @@ static void _pixman_log_error(const char *function, const char *message)
 #define GOOD_RECT(rect) ((rect)->x1 < (rect)->x2 && (rect)->y1 < (rect)->y2)
 #define BAD_RECT(rect) ((rect)->x1 > (rect)->x2 || (rect)->y1 > (rect)->y2)
 
-#ifdef DEBUG
+#if 0
 
 #define GOOD(reg)                                              \
     do {                                                       \

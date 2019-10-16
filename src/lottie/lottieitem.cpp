@@ -145,7 +145,7 @@ bool LOTCompItem::render(const rlottie::Surface &surface)
 {
     mSurface.reset(reinterpret_cast<uchar *>(surface.buffer()),
                    uint(surface.width()), uint(surface.height()), uint(surface.bytesPerLine()),
-                   VBitmap::Format::ARGB32_Premultiplied);
+                   VBitmap::Format::ARGB32);
 
     /* schedule all preprocess task for this frame at once.
      */
@@ -459,7 +459,7 @@ void LOTCompLayerItem::render(VPainter *painter, const VRle &inheritMask,
             VSize    size = painter->clipBoundingRect().size();
             VPainter srcPainter;
             VBitmap  srcBitmap(size.width(), size.height(),
-                              VBitmap::Format::ARGB32_Premultiplied);
+                              VBitmap::Format::ARGB32);
             srcPainter.begin(&srcBitmap);
             renderHelper(&srcPainter, inheritMask, matteRle);
             srcPainter.end();
@@ -516,7 +516,7 @@ void LOTCompLayerItem::renderMatteLayer(VPainter *painter, const VRle &mask,
     // 1. draw src layer to matte buffer
     VPainter srcPainter;
     src->bitmap().reset(size.width(), size.height(),
-                        VBitmap::Format::ARGB32_Premultiplied);
+                        VBitmap::Format::ARGB32);
     srcPainter.begin(&src->bitmap());
     src->render(&srcPainter, mask, matteRle);
     srcPainter.end();
@@ -524,7 +524,7 @@ void LOTCompLayerItem::renderMatteLayer(VPainter *painter, const VRle &mask,
     // 2. draw layer to layer buffer
     VPainter layerPainter;
     layer->bitmap().reset(size.width(), size.height(),
-                          VBitmap::Format::ARGB32_Premultiplied);
+                          VBitmap::Format::ARGB32);
     layerPainter.begin(&layer->bitmap());
     layer->render(&layerPainter, mask, matteRle);
 

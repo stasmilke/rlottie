@@ -1248,7 +1248,7 @@ LOTStrokeItem::LOTStrokeItem(LOTStrokeData *data)
     }
 }
 
-static thread_local std::vector<float> Dash_Vector;
+static std::vector<float> Dash_Vector;
 
 bool LOTStrokeItem::updateContent(int frameNo, const VMatrix &matrix, float alpha)
 {

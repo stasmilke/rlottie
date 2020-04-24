@@ -19,7 +19,6 @@
 #ifndef _RLOTTIE_CAPI_H_
 #define _RLOTTIE_CAPI_H_
 
-#include <stddef.h>
 #include <stdint.h>
 #include <rlottiecommon.h>
 

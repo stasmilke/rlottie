@@ -33,6 +33,7 @@
   #endif
 #endif
 
+#include <stddef.h>
 
 /**
  * @defgroup Lottie_Animation Lottie_Animation

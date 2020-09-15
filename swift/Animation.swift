@@ -5,7 +5,7 @@ public struct Animation {
     private let wrapper: AnimationPointerWrapper
 
     public let width: Int
-    public  let height: Int
+    public let height: Int
     public let duration: Double
     public let frameCount: Int
     public let frameRate: Double
@@ -50,5 +50,9 @@ public struct Animation {
                 }
             }
         }
+    }
+    
+    public func render(frame: Int, into data: UnsafeMutablePointer<UInt32>, width: Int, height: Int) {
+        lottie_animation_render(*wrapper, frame, data, width, height, width * 4)
     }
 }
